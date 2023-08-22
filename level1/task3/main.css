@@ -1,0 +1,107 @@
+/* /* Import Google font - Poppins */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+body {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #e3f9ff;
+  flex-direction: column;
+}
+span {
+  color: black;
+    -webkit-text-stroke: 0.14vw #7a9ac7;
+    letter-spacing: 2px;
+    stroke: #ffa5d8;
+    stroke-width: 3;
+    position: relative;
+    animation: textAnimate 5s infinite alternate;
+    font-size: 5rem;
+    margin-bottom: 2.5rem;
+}
+@media (max-width:767px){
+  span {
+  font-size: 4rem;
+  margin-top: 4rem;
+}
+}
+ span::before {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  color: #33ffd8;
+  -webkit-text-stroke: 0vw rgb(44, 42, 42);
+  border-right: 3px solid #33ffd8;
+  overflow: hidden;
+  animation: animate 6s linear infinite;
+}
+
+@keyframes animate {
+  0%,
+  10%,
+  100% {
+    width: 0;
+  }
+
+  70%,
+  90% {
+    width: 100%;
+  }
+}
+.container {
+  position: relative;
+  width: 365px;
+  border-radius: 12px;
+  padding: 10px 20px 20px;
+  background: #3a4452;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05);
+  -webkit-border-radius: 12px;
+  -moz-border-radius: 12px;
+  -ms-border-radius: 12px;
+  -o-border-radius: 12px;
+}
+.display {
+  height: 80px;
+  width: 100%;
+  outline: none;
+  border: none;
+  text-align: right;
+  margin-bottom: 10px;
+  font-size: 30px;
+  color: white;
+  background:transparent;
+  pointer-events: none;
+  height:110px;
+}
+.buttons {
+  display: grid;
+  grid-gap: 4px;
+  grid-template-columns: repeat(4, 1fr);
+}
+.buttons button {
+    border: none;
+    width: 60px;
+    height: 60px;
+    border-radius: 10px;
+    box-shadow: -8px -8px 15px rgba(255, 255, 255, 0.1), 5px 5px 15px rgba(0, 0, 0, 0.2);
+    background: transparent;
+    font-size: 20px;
+    color: #fff;
+    cursor: pointer;
+    margin: 10px;
+}
+.buttons button:active {
+  transform: scale(0.99);
+}
+button.operator {
+  color: #33ffd8;
+}
